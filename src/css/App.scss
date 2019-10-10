@@ -1,0 +1,48 @@
+// Components
+@import "../components/Items/items";
+
+// Images 
+$backgroundImage: url('../img/background.png');
+
+// Font 
+$fontRuneScape: url('../fonts/runescape.ttf') format('truetype');
+$fontRuneScapeW: url('../fonts/runescape.woff') format('woff');
+$fontColor: #ff0;
+
+
+@font-face {
+  src: 
+    local('Runescape'),
+    $fontRuneScape,
+    $fontRuneScapeW;
+  font-family: 'Runescape';
+}
+
+body {
+  color: $fontColor;
+  font-family: 'Runescape', 'Verdana';
+
+  background-image: $backgroundImage;
+  background-repeat: repeat;
+}
+
+// App 
+.App {
+  margin: 0 auto;
+  width: 1000px;
+  height: auto;
+  min-height: 300px;
+
+  border: 10px groove rgb(42, 42, 42);
+  background: rgba(63, 54, 34, 0.8);
+}
+
+// Header 
+.header {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.item-input {
+  width: 100%;
+}

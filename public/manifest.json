@@ -1,15 +1,15 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "RS Item Tracker",
+  "name": "RuneScape 2007 Item Tracker",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#444444",
   "background_color": "#ffffff"
 }
