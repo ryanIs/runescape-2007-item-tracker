@@ -1,12 +1,14 @@
 /**
  * Main application file for the application.
  */
-import React from 'react';
-import './css/App.css';
-import itemNames from './json/Names.json';
-import itemBank from './json/Ids.json';
-import Items from './components/Items/Items';
-import Item from './components/Item/Item';
+
+import React from 'react'
+import fetchJsonp from 'fetch-jsonp'
+import itemNames from './json/Names.json'
+import itemBank from './json/Ids.json'
+import Items from './components/Items/Items'
+import Item from './components/Item/Item'
+import './css/App.css'
 
 function consoleLog(message) {
   console.log(message)
@@ -19,7 +21,9 @@ function consoleLog(message) {
  */
 class App extends React.Component {
 
-  ITEM_DATABASE_API_PREFIX = 'services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item='
+  BASE_URL = 'http://services.runescape.com/m=itemdb_oldschool/'
+  // ITEM_DATABASE_API_PREFIX = BASE_URL + 'api/catalogue/detail.json?item='
+  ITEM_DATABASE_API_PREFIX = this.BASE_URL + 'results.ws?query='
 
   constructor(props) {
     super(props)
@@ -75,8 +79,9 @@ class App extends React.Component {
    * Adds a new item to watch based on the name.
    */
   addItem = (itemName) => {
+    
     let myItemId = itemBank[itemName]
-    let myItemData = this.getItemData(myItemId)
+    let myItemData = this.getItemData(itemName)
 
     let arrItems = this.state.items || []
     arrItems.push(myItemData)
@@ -84,38 +89,67 @@ class App extends React.Component {
     this.setState({
       items: arrItems
     })
+
   }
 
-  getItemData(itemId) {
+  getItemData(itemName) {
+
     let output = {}
-    let destination = this.ITEM_DATABASE_API_PREFIX + itemId
+    let destination = this.ITEM_DATABASE_API_PREFIX + itemName
+
     let methods = {
       headers: {
       },
     }
 
-    /*
-    fetch(destination, methods)
-    .then(response => {
-      return response.json()
-    })
-    .then(response => {
-      console.log(response)
-    })
-    .catch(error => {
-      consoleLog(error)
-      output = null
-    })
-    */
+    function ajax_get(url, callback) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                try {
+                    var data = xmlhttp.responseText;
+                        
+                } catch(err) {
+                    console.log(err.message + " in " + xmlhttp.responseText);
+                    return;
+                }
+                callback(data);
+            }
+        };
+    
+        xmlhttp.open("GET", url, true);
+        xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+        xmlhttp.setRequestHeader("Content-Type", "text/plain")
+        xmlhttp.send();
+    }
 
-    // fetchJsonp('/users.jsonp')
+    ajax_get(destination, function(data) {
+        console.log(data);
+    });
+
+    // fetch(destination, methods)
+    // .then(response => {
+    //   return response.json()
+    // })
+    // .then(response => {
+    //   console.log(response)
+    // })
+    // .catch(error => {
+    //   consoleLog(error)
+    //   output = null
+    // })
+
+    // fetchJsonp(destination)
     // .then(function(response) {
     //   return response.json()
-    // }).then(function(json) {
+    // })
+    // .then(function(json) {
     //   console.log('parsed json', json)
-    // }).catch(function(ex) {
+    // })
+    // .catch(function(ex) {
     //   console.log('parsing failed', ex)
     // })
+
   }
 
   renderItems() {
