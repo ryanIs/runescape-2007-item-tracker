@@ -175,6 +175,12 @@ class App extends React.Component {
           <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
         </div>
 
+        <div className="savedItems">
+          {{
+            // Objective: create a new component for one of the item squares (should be eight in a loop based on state).
+          }}
+        </div>
+
         <Items itemNames={itemNames} visibleItems={this.state.visibleItems} itemClick={this.addItem} />
 
         <div className="item-container">
