@@ -7,6 +7,7 @@ import fetchJsonp from 'fetch-jsonp'
 import itemNames from './json/Names.json'
 import itemBank from './json/Ids.json'
 import Items from './components/Items/Items'
+import SavedItem from './components/SavedItem/SavedItem'
 import Item from './components/Item/Item'
 import './css/App.css'
 
