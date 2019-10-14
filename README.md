@@ -7,7 +7,7 @@ within the Grand Exhange.
 
 # Run application
 
-    sass --watch src/css
+    sass --watch src/css src/components
     npm run start
 
 # Disclaimer

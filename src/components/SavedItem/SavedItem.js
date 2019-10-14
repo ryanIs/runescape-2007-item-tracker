@@ -9,7 +9,6 @@ class SavedItem extends React.Component {
   render() {
     return (
       <div className="saved-item">
-        This is a saved item.
       </div>
     )
   }

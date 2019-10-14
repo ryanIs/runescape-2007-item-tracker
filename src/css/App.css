@@ -7,6 +7,24 @@
   background: #ffe7b9;
 }
 
+.saved-item {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+
+.saved-items-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 600px;
+  height: 300px;
+  border: 1px solid blue;
+}
+
 @font-face {
   src: local("Runescape"), url("../fonts/runescape.ttf") format("truetype"), url("../fonts/runescape.woff") format("woff");
   font-family: "Runescape";

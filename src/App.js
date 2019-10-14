@@ -7,7 +7,7 @@ import fetchJsonp from 'fetch-jsonp'
 import itemNames from './json/Names.json'
 import itemBank from './json/Ids.json'
 import Items from './components/Items/Items'
-import SavedItem from './components/SavedItem/SavedItem'
+import SavedItems from './components/SavedItems/SavedItems'
 import Item from './components/Item/Item'
 import './css/App.css'
 
@@ -23,10 +23,31 @@ function consoleLog(message) {
 class App extends React.Component {
 
   BASE_URL = 'http://services.runescape.com/m=itemdb_oldschool/'
+
   // ITEM_DATABASE_API_PREFIX = BASE_URL + 'api/catalogue/detail.json?item='
   ITEM_DATABASE_API_PREFIX = this.BASE_URL + 'results.ws?query='
 
+  DEFAULT_SAVED_ITEM = {
+    itemName: 'Empty',
+    itemId: -1,
+    itemCost: -1,
+    itemImage: ''
+  }
+
+  INIT_SAVED_ITEMS = [
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM,
+
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM,
+    this.DEFAULT_SAVED_ITEM
+  ]
+
   constructor(props) {
+
     super(props)
 
     let itemsObject = {}
@@ -37,7 +58,8 @@ class App extends React.Component {
 
     this.state = {
       searchText: '',
-      visibleItems: itemsObject
+      visibleItems: itemsObject,
+      myItems: this.INIT_SAVED_ITEMS
     }
   }
 
@@ -173,16 +195,14 @@ class App extends React.Component {
       <div className="App">
 
         <div className="header">
-          <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
         </div>
 
-        <div className="savedItems">
-          {{
-            // Objective: create a new component for one of the item squares (should be eight in a loop based on state).
-          }}
-        </div>
+        <SavedItems items={this.state.myItems} />
+        
+        <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
 
         <Items itemNames={itemNames} visibleItems={this.state.visibleItems} itemClick={this.addItem} />
+
 
         <div className="item-container">
           {this.renderItems()}
