@@ -1,8 +1,11 @@
 .items-wrapper {
   margin: 0 auto;
-  width: 60%;
-  height: 300px;
+  padding: 5px;
+  width: 95%;
+  height: 150px;
+
   overflow: auto;
   color: black;
-  background: rgb(255, 231, 185);
+  background: #ffe7b9;
+  background: linear-gradient(#ffe7b9, #ebd4aa);
 }

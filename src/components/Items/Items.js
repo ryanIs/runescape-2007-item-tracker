@@ -26,6 +26,7 @@ class Items extends React.Component {
   render() {
     return(
       <div className="items-wrapper">
+
         <div className="items-container">
           {
             this.props.itemNames.map((element, index) => {
@@ -33,6 +34,7 @@ class Items extends React.Component {
             })
           }
         </div>
+        
       </div>
     )
   }

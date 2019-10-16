@@ -106,6 +106,10 @@ class App extends React.Component {
     let myItemId = itemBank[itemName]
     let myItemData = this.getItemData(itemName)
 
+    //-  OBJECTIVE(9,01): Delete the rest of this function.
+    //- Instead - use the gathered data to populate the currently selected
+    //- savedItem box.
+
     let arrItems = this.state.items || []
     arrItems.push(myItemData)
 
@@ -122,6 +126,7 @@ class App extends React.Component {
 
     let methods = {
       headers: {
+
       },
     }
 
@@ -189,12 +194,12 @@ class App extends React.Component {
     }
   }
 
-
   render() {
     return (
       <div className="App">
 
         <div className="header">
+          <h1>RuneScape 2007 Item Tracker</h1>
         </div>
 
         <SavedItems items={this.state.myItems} />
@@ -202,7 +207,6 @@ class App extends React.Component {
         <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
 
         <Items itemNames={itemNames} visibleItems={this.state.visibleItems} itemClick={this.addItem} />
-
 
         <div className="item-container">
           {this.renderItems()}

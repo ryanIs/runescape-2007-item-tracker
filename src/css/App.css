@@ -1,28 +1,82 @@
 .items-wrapper {
   margin: 0 auto;
-  width: 60%;
-  height: 300px;
+  padding: 5px;
+  width: 95%;
+  height: 150px;
   overflow: auto;
   color: black;
   background: #ffe7b9;
+  background: linear-gradient(#ffe7b9, #ebd4aa);
 }
 
 .saved-item {
   display: block;
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
+  padding: 5px;
+  width: 120px;
+  height: 120px;
+  background: transparent;
+  border: 3px solid #9c9183;
+  cursor: pointer;
+}
+.saved-item:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border: 3px solid #c5b7a5;
+}
+.saved-item .item {
+  width: 100%;
+  height: 45%;
+  clear: both;
+}
+.saved-item .cost {
+  width: 100%;
+  height: 45%;
+  clear: both;
+}
+.saved-item .item-image {
+  float: left;
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  background: #999;
 }
 
-.saved-items-wrapper {
+.saved-items {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.555);
+}
+.saved-items {
+  margin: 0 auto;
+  width: 580px;
+  height: auto;
+  border: 7px groove #2a2a2a;
+  background: linear-gradient(#6b5e4c, #5a4f40);
+}
+.saved-items .saved-items-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0 auto;
-  width: 600px;
+  width: 580px;
   height: 300px;
-  border: 1px solid blue;
+  color: #e5a63d;
+}
+.saved-items .header {
+  margin: 3px 0 7px;
+  padding: 0;
+}
+.saved-items .header h1 {
+  margin: 0 auto;
+  padding: 0;
+  width: 60%;
+  border-bottom: 4px solid #222222;
+  text-align: center;
+}
+.saved-items .header h2 {
+  margin: 10px 0 10px 20px;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
 }
 
 @font-face {
@@ -30,28 +84,45 @@
   font-family: "Runescape";
 }
 body {
-  color: #ff0;
+  color: #ff981f;
   font-family: "Runescape", "Verdana";
   background-image: url("../img/background.png");
   background-repeat: repeat;
 }
 
+h1 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.555);
+}
+
 .App {
   margin: 0 auto;
-  width: 1000px;
+  padding: 20px;
+  width: 600px;
   height: auto;
   min-height: 300px;
   border: 10px groove #2a2a2a;
-  background: rgba(63, 54, 34, 0.8);
+  background: linear-gradient(#494034, #3a3229);
 }
 
 .header {
-  width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
+  width: auto;
+}
+
+.App > .header h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #ff0;
 }
 
 .item-input {
-  width: 100%;
+  display: block;
+  margin: 5px auto;
+  width: 97%;
+  font-size: 1.2em;
+  font-family: "Runescape";
+  background-color: #fdf1db;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -9,10 +9,17 @@ class SavedItem extends React.Component {
   render() {
     return (
       <div className="saved-item">
-        <div>{this.props.itemName}</div>
-        <div>{this.props.itemId}</div>
-        <div>{this.props.itemCost}</div>
-        <div>{this.props.itemDescription}</div>
+
+        <div className="item">
+          {/* OBJECTIVE(7,00): <div>{this.props.itemImage}aabc</div>*/}
+          <div className='item-image'></div>
+          <div>{this.props.itemName}</div>
+        </div>
+
+        <div className="cost">
+          <div>{this.props.itemCost} coins</div>
+        </div>
+
       </div>
     )
   }

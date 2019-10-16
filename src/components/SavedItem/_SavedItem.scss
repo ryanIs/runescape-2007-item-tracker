@@ -1,6 +1,44 @@
 .saved-item {
-  display: block;
-  width: 100px;
-  height: 100px;
-  border: 1px solid red;
+
+  & {
+    display: block;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+
+    background: transparent;
+    border: 3px solid #9c9183;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.13);
+    border: 3px solid #c5b7a5;
+  }
+
+  .item {
+    width: 100%;
+    height: 45%;
+
+    clear: both;
+  }
+
+  .cost {
+    width: 100%;
+    height: 45%;
+
+    clear: both;
+  }
+
+  .item-image {
+    float: left;
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+
+    //-  TODO: PLACEHOLDER! REPLACE WITH LOADED IMAGE FROM SERVER!
+    border: 1px solid white;
+    background: #999;
+  }
+
 }

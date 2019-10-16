@@ -10,7 +10,9 @@ $backgroundImage: url('../img/background.png');
 // Font 
 $fontRuneScape: url('../fonts/runescape.ttf') format('truetype');
 $fontRuneScapeW: url('../fonts/runescape.woff') format('woff');
-$fontColor: #ff0;
+$fontColorHeader: #ff0;
+$fontColor: #ff981f;
+$fontSubColor: #e5a63d;
 
 
 @font-face {
@@ -21,6 +23,7 @@ $fontColor: #ff0;
   font-family: 'Runescape';
 }
 
+// Globals
 body {
   color: $fontColor;
   font-family: 'Runescape', 'Verdana';
@@ -29,23 +32,42 @@ body {
   background-repeat: repeat;
 }
 
+h1 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.555);
+}
+
 // App 
 .App {
   margin: 0 auto;
-  width: 1000px;
+  padding: 20px;
+  width: 600px;
   height: auto;
   min-height: 300px;
 
   border: 10px groove rgb(42, 42, 42);
-  background: rgba(63, 54, 34, 0.8);
+  background: linear-gradient(#494034, #3a3229);
 }
 
 // Header 
 .header {
-  width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
+  width: auto;
+}
+
+.App > .header h1 {
+  margin: 0;
+  padding: 0;
+  
+  text-align: center;
+  color: $fontColorHeader;
 }
 
 .item-input {
-  width: 100%;
+  display: block;
+  margin: 5px auto;
+  width: 97%;
+
+  font-size: 1.2em;
+  font-family: "Runescape";
+  background-color: #fdf1db;
 }

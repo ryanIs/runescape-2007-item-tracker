@@ -13,19 +13,28 @@ class SavedItems extends React.Component {
   render() {
 
     return(
-      <div className="saved-items-wrapper">
-        {
-          this.props.items.map((itemObject, index) => {
-            return(
-              <SavedItem 
-                itemImage={itemObject.itemImage} 
-                itemName={itemObject.itemName} 
-                itemCost={itemObject.itemCost} 
-                itemId={itemObject.itemId} 
-              />
-            )
-          })
-        }
+      <div className="saved-items">
+
+        <div className="header">
+          <h1>Grand Exchange</h1>
+          <h2>Select an item slot then search for a name to track the item.</h2>
+        </div>
+
+        <div className="saved-items-wrapper">
+          {
+            this.props.items.map((itemObject, index) => {
+              return(
+                <SavedItem 
+                  itemImage={itemObject.itemImage} 
+                  itemName={itemObject.itemName} 
+                  itemCost={itemObject.itemCost} 
+                  itemId={itemObject.itemId} 
+                />
+              )
+            })
+          }
+        </div>
+
       </div>
     )
 
