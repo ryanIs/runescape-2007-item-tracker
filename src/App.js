@@ -204,12 +204,15 @@ class App extends React.Component {
 
         <SavedItems items={this.state.myItems} />
         
-        <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
+        <div className='item-search'>
 
-        <Items itemNames={itemNames} visibleItems={this.state.visibleItems} itemClick={this.addItem} />
+          <input className="item-input" type="text" value={this.state.searchText} onChange={this.handleSearchTextChange} />
 
-        <div className="item-container">
-          {this.renderItems()}
+          <Items itemNames={itemNames} visibleItems={this.state.visibleItems} itemClick={this.addItem} />
+
+          <div className="item-container">
+            {this.renderItems()}
+          </div>
         </div>
 
       </div>

@@ -116,6 +116,10 @@ h1 {
   color: #ff0;
 }
 
+.item-search {
+  display: none;
+}
+
 .item-input {
   display: block;
   margin: 5px auto;
