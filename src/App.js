@@ -194,6 +194,10 @@ class App extends React.Component {
     }
   }
 
+  selectSavedItem = (boxId) => {
+    console.log(`id set to: ${boxId}`)
+  }
+
   render() {
     return (
       <div className="App">
@@ -202,7 +206,7 @@ class App extends React.Component {
           <h1>RuneScape 2007 Item Tracker</h1>
         </div>
 
-        <SavedItems items={this.state.myItems} />
+        <SavedItems items={this.state.myItems} itemClick={this.selectSavedItem} />
         
         <div className='item-search'>
 

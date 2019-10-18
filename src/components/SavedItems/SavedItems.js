@@ -9,7 +9,7 @@ class SavedItems extends React.Component {
   constructor(props) {
     super(props)
   }
-
+v = () => console.log(5)
   render() {
 
     return(
@@ -24,12 +24,15 @@ class SavedItems extends React.Component {
           {
             this.props.items.map((itemObject, index) => {
               return(
-                <SavedItem 
-                  itemImage={itemObject.itemImage} 
-                  itemName={itemObject.itemName} 
-                  itemCost={itemObject.itemCost} 
-                  itemId={itemObject.itemId} 
-                />
+                <span onClick={(mouseEvent) => this.props.itemClick(index)}>
+                  <SavedItem 
+                    itemImage={itemObject.itemImage} 
+                    itemName={itemObject.itemName} 
+                    itemCost={itemObject.itemCost} 
+                    itemId={itemObject.itemId}
+                    key={`saved-item-${index}`}
+                  />
+                </span>
               )
             })
           }
