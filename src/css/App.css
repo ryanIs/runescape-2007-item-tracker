@@ -9,11 +9,27 @@
   background: linear-gradient(#ffe7b9, #ebd4aa);
 }
 
+.items-container .item {
+  background: transparent;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+.items-container .item:hover {
+  background: rgba(255, 255, 255, 0.308);
+}
+
 .saved-item {
   display: block;
   padding: 5px;
   width: 120px;
   height: 120px;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   background: transparent;
   border: 3px solid #9c9183;
   cursor: pointer;
@@ -30,15 +46,17 @@
 .saved-item .cost {
   width: 100%;
   height: 45%;
+  text-align: center;
   clear: both;
 }
 .saved-item .item-image {
   float: left;
   margin: 0 5px;
-  width: 30px;
-  height: 30px;
-  border: 1px solid white;
-  background: #999;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #9c9183;
+  background: rgba(83, 77, 70, 0.438);
+  border-radius: 5px;
 }
 
 .saved-items {
@@ -60,6 +78,10 @@
   width: 580px;
   height: 300px;
   color: #e5a63d;
+}
+.saved-items .saved-items-wrapper span {
+  height: 135px;
+  max-height: 135px;
 }
 .saved-items .header {
   margin: 3px 0 7px;
@@ -107,6 +129,7 @@ h1 {
 .header {
   margin: 0 auto 20px;
   width: auto;
+  position: relative;
 }
 
 .App > .header h1 {
@@ -116,13 +139,21 @@ h1 {
   color: #ff0;
 }
 
+.header img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -10px;
+  left: -10px;
+}
+
 .item-search {
   display: none;
 }
 
 .item-input {
   display: block;
-  margin: 5px auto;
+  margin: 10px auto;
   width: 97%;
   font-size: 1.2em;
   font-family: "Runescape";

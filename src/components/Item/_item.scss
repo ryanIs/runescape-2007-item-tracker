@@ -1,0 +1,16 @@
+.items-container {
+  .item {
+    background: transparent;
+    
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    cursor: pointer;
+  }
+
+  .item:hover {
+    background: rgba(255, 255, 255, 0.308);
+  }
+}

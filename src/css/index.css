@@ -5,7 +5,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.disclaimer {
+  margin: 10px auto;
+  font-size: 0.6em;
+  opacity: 0.3;
+
+  text-align: center;
+}
+.disclaimer a {
+  color: #ff0;
 }

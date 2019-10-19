@@ -6,6 +6,11 @@
     width: 120px;
     height: 120px;
 
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    
     background: transparent;
     border: 3px solid #9c9183;
     cursor: pointer;
@@ -27,18 +32,18 @@
     width: 100%;
     height: 45%;
 
+    text-align: center;
     clear: both;
   }
 
   .item-image {
     float: left;
     margin: 0 5px;
-    width: 30px;
-    height: 30px;
-
-    //-  TODO: PLACEHOLDER! REPLACE WITH LOADED IMAGE FROM SERVER!
-    border: 1px solid white;
-    background: #999;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #9c9183;
+    background: rgba(83, 77, 70, 0.438);
+    border-radius: 5px;
   }
 
 }

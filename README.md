@@ -10,6 +10,11 @@ within the Grand Exhange.
     sass --watch src/css src/components
     npm run start
 
+# API
+
+The API was created by Jagex.
+[API LINK](https://www.reddit.com/r/2007scape/comments/3g06rq/guide_using_the_old_school_ge_page_api/)
+
 # Disclaimer
 
 Old school RuneScape is owned by Jagex.

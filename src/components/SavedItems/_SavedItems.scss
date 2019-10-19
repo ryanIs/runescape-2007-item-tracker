@@ -31,6 +31,11 @@ $fontSubColor: #e5a63d;
     height: 300px;
 
     color: $fontSubColor;
+
+    span {
+      height: 135px;
+      max-height: 135px;
+    }
   }
 
   .header {
